@@ -1,0 +1,67 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+          body {font-family: Arial, Helvetica, sans-serif;}
+         * {box-sizing: border-box;}
+
+        .input-container {
+         display: -ms-flexbox; /* IE10 */
+         display: flex;
+         width: 100%;
+        margin-bottom: 15px;
+          }
+body {
+  background-image: url('https://lh3.googleusercontent.com/proxy/YRti-zAE0GVXXEPLpYtvPkFvnkrC3PzP-iXpm5V-nJU5Y6Aj9LGDpoufaQvdv1Qq_xmGRv6cOdq5xC1Lm5N-ZhSJ5-gUKN-npH3V-gV7swzFgHdSHQ3tna_coL3eux2w');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+.icon {
+  padding: 10px;
+  background: dodgerblue;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+.btn {
+  background-color: dodgerblue;
+  color: white;
+  padding: 15px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btn:hover {
+  opacity: 1;
+}
+    </style>
+</head>
+{% extends "base.html" %}
+{% block content %}
+<body style="max-width:500px;margin:auto" autocomplete="on">
+<form method="POST">
+    {# This hidden_tag is a CSRF security feature. #}
+    {{ form.hidden_tag() }}
+  <b>  {{ form.email.label }} {{ form.email() }}</b><br>
+    {{ form.username.label }} {{ form.username() }}<br>
+    {{ form.password.label }} {{ form.password() }}<br>
+    {{ form.pass_confirm.label }} {{ form.pass_confirm() }}<br>
+    {{ form.submit() }}
+</form>
+{% endblock %}
+</body>
+</html>
