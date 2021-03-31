@@ -5,7 +5,6 @@
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 </head>
 <html>
-<body style="max-width:500px;margin:auto" autocomplete="on">
 <form method="POST">
     {# This hidden_tag is a CSRF security feature. #}
     {{ form.hidden_tag() }}
@@ -15,6 +14,5 @@
     {{ form.pass_confirm.label }} {{ form.pass_confirm() }}<br>
     {{ form.submit() }}
 </form>
-</body>
 </html>
 {% endblock %}
