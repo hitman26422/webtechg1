@@ -9,10 +9,10 @@
     {# This hidden_tag is a CSRF security feature. #}
     {{ form.hidden_tag() }}
     <div class="form-group">
-    {{ form.email.label }} {{ form.email() }}
+    {{ form.email.label }} {{ form.email(class_="form-control")  }}
     </div>
     <div class="form-group">
-    {{ form.password.label }} {{ form.password() }}
+    {{ form.password.label }} {{ form.password(class_="form-control") }}
     {{ form.submit() }}
     </div>
 </form>
